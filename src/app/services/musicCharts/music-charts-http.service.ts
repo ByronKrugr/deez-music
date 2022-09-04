@@ -10,6 +10,8 @@ export class MusicChartsHttpService {
   constructor(private http: HttpClient) { }
 
   getChart(): Observable<any> { // make it accept chart type and then that number which is unknown for now (might be more path variables)
-    return this.http.get('api/chart');
+    // return this.http.get('api/chart');
+    return this.http.jsonp('api/chart?output=jsonp&callback=ng_jsonp_callback_1', 'JSONP_CALLBACK');
+
   }
 }
