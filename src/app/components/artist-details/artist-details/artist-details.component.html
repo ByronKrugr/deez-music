@@ -1,0 +1,76 @@
+<!-- <p style="background-color: yellow;" *ngIf="isLoading">loading...</p> -->
+<!-- <p style="background-color: pink;" *ngIf="isLoading">loading...</p>
+<div style="background-color: purple;" *ngIf="!isLoading">
+    {{ artist$ | async | json}}
+</div> -->
+
+<div class="artist-container" *ngIf="artist">
+    <div class="artist-pic-name-container">
+        <div class="artist-pic-and-name">
+            <img src="{{ artist.image }}">
+            <p id="artist-title">{{ artist.name }}</p>
+        </div>
+    </div>
+
+    <div class="artist-top-tracks-container">
+        <div class="artist-top-tracks-title-container">
+            <p id="top-tracks-title">Top Tracks</p>
+        </div>
+
+        <div class="artist-top-tracks">
+            <div class="single-track-container" *ngFor="let track of tracks$ | async">
+                <div class="rank-image-title-container">
+                    <div>1</div>
+                    <!-- <div></div> -->
+                    <img class="track-image"
+                        src="https://e-cdns-images.dzcdn.net/images/artist/2ceac184bc846327f60c5b0d4247cc7a/500x500-000000-80-0-0.jpg">
+                    <div>As it Was</div>
+                </div>
+                <div class="title-time-heart-container">
+                    <div>Harry's House</div>
+                    <!-- <div></div> -->
+                    <div>10:22</div>
+                    <img class="track-image"
+                        src="https://e-cdns-images.dzcdn.net/images/artist/2ceac184bc846327f60c5b0d4247cc7a/500x500-000000-80-0-0.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="artist-albums-container">
+        <div class="artist-albums-title-container test">
+            <p id="albums-title">Albums</p>
+        </div>
+
+        <div class="artist-albums">
+            <div class="albums-container">
+                <div class="album-container" *ngFor="let album of albums$ | async">
+                    <img src="{{ album.image }}" />
+                    <p>{{ album.title }}</p>
+                    <p>{{ album.title }}</p>
+                </div>
+            </div>
+            <!-- <div class="single-track-container" *ngFor="let track of tracks$ | async">
+                <div class="rank-image-title-container">
+                    <div>x</div>
+                    <div></div>
+                    <div>z</div>
+                </div>
+                <div class="title-time-heart-container">
+                    <div>x</div>
+                    <div>y</div>
+                    <div>z</div>
+                </div>
+            </div> -->
+            <div class="albums-container">
+                <div class="album-container">
+                    <img src="album.image" />
+                    <p>album.title</p>
+                    <p>album.title</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- {{ data$ | async | json }} -->

@@ -1,0 +1,30 @@
+<div *ngIf="isLoadingTracks">
+    <mat-spinner></mat-spinner>
+</div>
+<!-- <button mat-button color="primary">Primary</button>
+<button mat-button color="accent">Accent</button>
+<button mat-button color="warn">Warn</button>
+<button mat-raised-button color="primary">Primary</button>
+<button mat-raised-button color="accent">Accent</button>
+<button mat-raised-button color="warn">Warn</button>
+<button mat-stroked-button color="primary">Primary</button>
+<button mat-stroked-button color="accent">Accent</button>
+<button mat-stroked-button color="warn">Warn</button>
+<div *ngIf="!isLoadingTracks">
+    <p>here:</p>
+    <p>{{ tracks$ | async | json }}</p>
+</div> -->
+<div class="chart-track-container" *ngIf="!isLoadingTracks">
+    <mat-card *ngFor="let track of tracks$ | async" class="chart-track" routerLink="/track/{{ track.id }}">
+        <mat-card-header class="chart-track-title">
+            <div>
+                <mat-card-title>{{ track.title }}</mat-card-title>
+                <mat-card-subtitle *ngIf="track.artist">{{ track.artist.name }}</mat-card-subtitle>
+            </div>
+        </mat-card-header>
+        <mat-card-content class="chart-track-album-image">
+            <img class="album-img" *ngIf="track.album" src="{{ track.album.image }}" />
+
+        </mat-card-content>
+    </mat-card>
+</div>

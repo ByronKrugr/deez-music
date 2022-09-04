@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+// body {
+//     background-color: #121212;
+// }
+
+// p {
+//     margin: 0;
+// }
+
+html,
+body {
+    height: 150%;
+    // background-color: rgb(252, 247, 236);
+    // background-color: white;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    // background-color: rgba(233, 30, 99, 0.09);
+    // background-color: rgba(233, 30, 99, 0.2)
+    // background-color: rgba(233, 30, 99, 0.09); // #121212
+}
+
+// "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+
+.mat-card-header {
+    // background-color: rgba(233, 30, 99, 0.2) !important;
+    padding: 5px !important;
+}
+
+.mat-card {
+    padding: 0 !important;
+    background-color: #3D1422 !important;
+}
+
+.mat-card-content {
+    padding: 5px !important;
+}
+
+#container {
+    background-color: #251319;
+}

@@ -1,0 +1,28 @@
+#container {
+    height: 100%;
+
+    // display: grid;
+    // grid-template-columns: 1fr 640px 1fr;
+    // grid-template-rows: 40px 1fr;
+    // grid-template-areas:
+    // "top-nav"
+    // "content";
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 0px;
+    column-gap: 100px;
+    // align-items: ;
+
+}
+
+#top-nav {
+    grid-area: top-nav;
+    background-color: #32141E
+}
+
+#content {
+    grid-area: content;
+    // background-color: rgb(249, 245, 219);
+    // height: 100%;
+}
