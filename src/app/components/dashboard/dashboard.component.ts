@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { Actions, ofActionCompleted, ofActionDispatched, Select, Store } from '@ngxs/store';
 import { Observable, Subject } from 'rxjs';
@@ -29,13 +30,16 @@ export class DashboardComponent implements OnInit {
   // public musicChart!: MusicChart;
   public isLoadingTracks = false;
   public tracks$?: Observable<MusicTrack[]>;
+  public fact$: Observable<any>;
 
   // private musicChartService: MusicChartsService,
   constructor(
     private store: Store,
-    private actions$: Actions) {
+    private actions$: Actions,
+    private http: HttpClient) {
 
     this.tracks$ = this.store.select(state => state.music.chartTracks);
+    this.fact$ = this.http.get('https://catfact.ninja/fact');
   }
 
   ngOnInit(): void {
